@@ -4406,7 +4406,7 @@ MonoBehaviour:
   redKeyScoreNumber: 0
   player1Teleporter: {fileID: 75099088}
   player1Win: {fileID: 1853801768}
-  Player2: {fileID: 4674543537896427558}
+  player2: {fileID: 0}
   audioManager: {fileID: 277422237}
   key: {fileID: 8300000, guid: 0c3008290c397f346885ee621fb7b1e1, type: 3}
 --- !u!54 &4674543537896427539
@@ -4557,7 +4557,7 @@ MonoBehaviour:
   greenKeyScoreNumber: 0
   player2Teleporter: {fileID: 416530923}
   player2Win: {fileID: 1259771637}
-  Player1: {fileID: 368500110114068246}
+  player1: {fileID: 0}
   audioManager: {fileID: 277422237}
   key: {fileID: 8300000, guid: 0c3008290c397f346885ee621fb7b1e1, type: 3}
 --- !u!1 &4674543538789332482

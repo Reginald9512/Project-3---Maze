@@ -11,7 +11,7 @@ public class Player2Pickup : MonoBehaviour
 
     public GameObject player2Teleporter;
     public GameObject player2Win;
-    public GameObject Player1;
+    public GameObject player1;
 
     public AudioSource audioManager;
     public AudioClip key;
@@ -58,11 +58,11 @@ public class Player2Pickup : MonoBehaviour
 
             GetComponent<Player2Controller>().enabled = false;
 
-            Player1.GetComponent<Player1Controller>().enabled = false;
+            player1.GetComponent<Player1Controller>().enabled = false;
 
             gameObject.SetActive(false);
 
-            Player1.SetActive(false);
+            player1.SetActive(false);
         }
     }
 }
