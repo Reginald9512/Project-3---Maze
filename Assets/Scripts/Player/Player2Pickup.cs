@@ -12,6 +12,10 @@ public class Player2Pickup : MonoBehaviour
     public GameObject player2Teleporter;
     public GameObject player2Win;
     public GameObject player1;
+    public GameObject greenKey1;
+    public GameObject greenKey2;
+    public GameObject greenKey3;
+    public GameObject greenKey4;
 
     public AudioSource audioManager;
     public AudioClip keyPickup;
@@ -42,7 +46,7 @@ public class Player2Pickup : MonoBehaviour
         {
             if (collision.gameObject.tag == "GreenKey")
             {
-                Destroy(collision.gameObject);
+                collision.gameObject.SetActive(false);
 
                 audioManager.PlayOneShot(keyPickup);
 
@@ -70,6 +74,11 @@ public class Player2Pickup : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             transform.position = player2StartPosition.position;
+
+            greenKey1.SetActive(true);
+            greenKey2.SetActive(true);
+            greenKey3.SetActive(true);
+            greenKey4.SetActive(true);
         }
     }
 }
