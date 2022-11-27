@@ -3,17 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Teleporter1
+  - Teleporter2
+  - GreenKey
+  - RedKey
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Maze
+  - Floor
+  - Backdrop
   - 
   - 
   - 

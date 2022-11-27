@@ -14,7 +14,9 @@ public class Player2Pickup : MonoBehaviour
     public GameObject player1;
 
     public AudioSource audioManager;
-    public AudioClip key;
+    public AudioClip keyPickup;
+
+    public Transform player2StartPosition;
 
     private void Start()
     {
@@ -42,7 +44,7 @@ public class Player2Pickup : MonoBehaviour
             {
                 Destroy(collision.gameObject);
 
-                audioManager.PlayOneShot(key);
+                audioManager.PlayOneShot(keyPickup);
 
                 greenKeyScoreNumber += 1;
                 greenKeyScore.text = greenKeyScoreNumber.ToString();
@@ -63,6 +65,11 @@ public class Player2Pickup : MonoBehaviour
             gameObject.SetActive(false);
 
             player1.SetActive(false);
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            transform.position = player2StartPosition.position;
         }
     }
 }
