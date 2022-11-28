@@ -3426,7 +3426,7 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2.0000002
@@ -5737,7 +5737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redKeyScoreNumber: 0
   enemy1: {fileID: 1306127013}
-  enemy2: {fileID: 0}
+  enemy2: {fileID: 719275096}
   player1Teleporter: {fileID: 75099088}
   player1Win: {fileID: 1853801768}
   player2: {fileID: 4674543537896427558}
@@ -5905,7 +5905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenKeyScoreNumber: 0
   enemy1: {fileID: 1306127013}
-  enemy2: {fileID: 0}
+  enemy2: {fileID: 719275096}
   player2Teleporter: {fileID: 416530923}
   player2Win: {fileID: 1259771637}
   player1: {fileID: 368500110114068246}
