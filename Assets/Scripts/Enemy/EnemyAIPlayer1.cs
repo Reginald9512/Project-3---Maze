@@ -29,7 +29,7 @@ public class EnemyAIPlayer1 : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInSightRange) ChasePlayer();
     }
 
     private void Patroling()
