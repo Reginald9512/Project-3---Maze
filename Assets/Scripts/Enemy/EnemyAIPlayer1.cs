@@ -17,7 +17,7 @@ public class EnemyAIPlayer1 : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
-    private void Awake()
+    private void Start()
     {
         player1 = GameObject.Find("RedPlayer1").transform;
         agent = GetComponent<NavMeshAgent>();
