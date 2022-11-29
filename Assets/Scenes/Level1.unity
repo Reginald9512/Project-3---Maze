@@ -1905,7 +1905,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.6
-  m_Speed: 5
+  m_Speed: 4
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -3421,7 +3421,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.6
-  m_Speed: 5
+  m_Speed: 4
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -5093,7 +5093,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: e443aa1140e6a61428cf3e11bfccadfa, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8ac752682ec6abb438b1c0d20723c77a, type: 2}
 --- !u!1 &2069219631
 GameObject:
   m_ObjectHideFlags: 0
@@ -8097,8 +8097,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6852924325601011178}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.14, y: 0.27999997, z: -0.836}
-  m_LocalScale: {x: 1.41, y: 0.5579879, z: 0.15798786}
+  m_LocalPosition: {x: 0.14, y: 0.27999997, z: -1.174}
+  m_LocalScale: {x: 0.78851837, y: 0.5579879, z: 0.15798786}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6852924326322819941}
