@@ -9,6 +9,8 @@ public class SceneChanger : MonoBehaviour
 
     public AudioClip buttonPress;
 
+    public GameObject difficultyPanel;
+
     public void MoveToScene(int sceneID)
     {
         SceneManager.LoadScene(sceneID);
@@ -23,5 +25,15 @@ public class SceneChanger : MonoBehaviour
         Debug.Log("Quit");
 
         audioManager.PlayOneShot(buttonPress);
+    }
+
+    public void openDifficultyPanel()
+    {
+        difficultyPanel.SetActive(true);
+    }
+
+    public void closeDifficultyPanel()
+    {
+        difficultyPanel.SetActive(false);
     }
 }
