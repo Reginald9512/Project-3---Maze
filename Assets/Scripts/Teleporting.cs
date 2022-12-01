@@ -8,7 +8,6 @@ public class Teleporting : MonoBehaviour
 	public GameObject thePlayer;
 
 	void OnTriggerEnter(Collider other)
-
 	{
 			thePlayer.transform.position = teleportTarget.transform.position;
 	}
