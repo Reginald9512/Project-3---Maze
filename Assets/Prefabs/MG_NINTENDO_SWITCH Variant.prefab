@@ -2671,7 +2671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6262535691660489943}
   m_Layer: 0
-  m_Name: NINTENDO_SWITCH Variant
+  m_Name: MG_NINTENDO_SWITCH Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
