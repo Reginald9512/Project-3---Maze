@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player2PickupEasy : MonoBehaviour
@@ -14,6 +15,7 @@ public class Player2PickupEasy : MonoBehaviour
     public GameObject player2Teleporter;
     public GameObject player2Win;
     public GameObject player1;
+    public GameObject player2;
     public GameObject greenKey1;
     public GameObject greenKey2;
     public GameObject greenKey3;
@@ -33,8 +35,11 @@ public class Player2PickupEasy : MonoBehaviour
     public AudioSource audioManager;
     public AudioClip keyPickup;
     public AudioClip deathSound;
+    public AudioClip fastTravel;
 
     public Transform player2StartPosition;
+    public Transform fastTravel1;
+    public Transform fastTravel2;
 
     private void Start()
     {
@@ -132,6 +137,21 @@ public class Player2PickupEasy : MonoBehaviour
 
             enemy1.SetActive(false);
             enemy2.SetActive(false);
+
+            SceneManager.LoadScene(5);
+        }
+
+        if (other.gameObject.CompareTag("Fast Travel 1"))
+        {
+            player2.transform.position = fastTravel2.position;
+
+            audioManager.PlayOneShot(fastTravel);
+        }
+        if (other.gameObject.CompareTag("Fast Travel 2"))
+        {
+            player2.transform.position = fastTravel1.position;
+
+            audioManager.PlayOneShot(fastTravel);
         }
 
         if (other.gameObject.CompareTag("Enemy"))

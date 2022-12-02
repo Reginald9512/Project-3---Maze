@@ -26,14 +26,4 @@ public class SceneChanger : MonoBehaviour
 
         audioManager.PlayOneShot(buttonPress);
     }
-
-    public void openDifficultyPanel()
-    {
-        difficultyPanel.SetActive(true);
-    }
-
-    public void closeDifficultyPanel()
-    {
-        difficultyPanel.SetActive(false);
-    }
 }

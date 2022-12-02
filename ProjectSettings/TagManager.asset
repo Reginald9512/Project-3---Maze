@@ -8,6 +8,9 @@ TagManager:
   - Teleporter2
   - GreenKey
   - RedKey
+  - Enemy
+  - Fast Travel 1
+  - Fast Travel 2
   layers:
   - Default
   - TransparentFX

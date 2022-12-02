@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
-    guid: b347d4774853eae4c92248dd3f3f0cb9
+    guid: 9f025cb6ccbd0614d8ffaf115fb71a92
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 61177efe0f0dcf049bde32e749e0d731
@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 1bb3251c1c602c64ab3ed730bd01a2e1
+  - enabled: 1
+    path: Assets/Scenes/Red Win Scene.unity
+    guid: cb30732159c888f4b96f6d5c2f2158fd
+  - enabled: 1
+    path: Assets/Scenes/Green Win Scene.unity
+    guid: 631f5cd6214d51d4ba99b0645f4bbc90
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player1PickupEasy : MonoBehaviour
@@ -13,6 +14,7 @@ public class Player1PickupEasy : MonoBehaviour
 
     public GameObject player1Teleporter;
     public GameObject player1Win;
+    public GameObject player1;
     public GameObject player2;
     public GameObject redKey1;
     public GameObject redKey2;
@@ -33,8 +35,11 @@ public class Player1PickupEasy : MonoBehaviour
     public AudioSource audioManager;
     public AudioClip keyPickup;
     public AudioClip deathSound;
+    public AudioClip fastTravel;
 
     public Transform player1StartPosition;
+    public Transform fastTravel1;
+    public Transform fastTravel2;
 
     public void Start()
     {
@@ -120,8 +125,6 @@ public class Player1PickupEasy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter1"))
         {
-            player1Win.SetActive(true);
-
             GetComponent<Player1Controller>().enabled = false;
 
             player2.GetComponent<Player2Controller>().enabled = false;
@@ -132,6 +135,21 @@ public class Player1PickupEasy : MonoBehaviour
 
             enemy1.SetActive(false);
             enemy2.SetActive(false);
+
+            SceneManager.LoadScene(4);
+        }
+
+        if (other.gameObject.CompareTag("Fast Travel 1"))
+        {
+            player1.transform.position = fastTravel2.position;
+
+            audioManager.PlayOneShot(fastTravel);
+        }
+        if (other.gameObject.CompareTag("Fast Travel 2"))
+        {
+            player1.transform.position = fastTravel1.position;
+
+            audioManager.PlayOneShot(fastTravel);
         }
 
         if (other.gameObject.CompareTag("Enemy"))
