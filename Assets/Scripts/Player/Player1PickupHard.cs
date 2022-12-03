@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player1PickupHard : MonoBehaviour
@@ -13,6 +14,7 @@ public class Player1PickupHard : MonoBehaviour
 
     public GameObject player1Teleporter;
     public GameObject player1Win;
+    public GameObject player1;
     public GameObject player2;
     public GameObject redKey1;
     public GameObject redKey2;
@@ -39,8 +41,13 @@ public class Player1PickupHard : MonoBehaviour
     public AudioSource audioManager;
     public AudioClip keyPickup;
     public AudioClip deathSound;
+    public AudioClip fastTravel;
 
     public Transform player1StartPosition;
+    public Transform fastTravel1;
+    public Transform fastTravel2;
+    public Transform fastTravel3;
+    public Transform fastTravel4;
 
     public void Start()
     {
@@ -142,34 +149,501 @@ public class Player1PickupHard : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter1"))
         {
-            player1Win.SetActive(true);
+            //GetComponent<Player1Controller>().enabled = false;
 
-            GetComponent<Player1Controller>().enabled = false;
+            //player2.GetComponent<Player2Controller>().enabled = false;
 
-            player2.GetComponent<Player2Controller>().enabled = false;
+            //gameObject.SetActive(false);
 
-            gameObject.SetActive(false);
+            //player2.SetActive(false);
 
-            player2.SetActive(false);
+            //enemy1.SetActive(false);
+            //enemy2.SetActive(false);
 
-            enemy1.SetActive(false);
-            enemy2.SetActive(false);
+            SceneManager.LoadScene(4);
+        }
+
+        if (other.gameObject.CompareTag("Fast Travel 1"))
+        {
+            player1.transform.position = fastTravel2.position;
+
+            audioManager.PlayOneShot(fastTravel);
+        }
+        if (other.gameObject.CompareTag("Fast Travel 2"))
+        {
+            player1.transform.position = fastTravel1.position;
+
+            audioManager.PlayOneShot(fastTravel);
+        }
+        if (other.gameObject.CompareTag("Fast Travel 3"))
+        {
+            player1.transform.position = fastTravel4.position;
+
+            audioManager.PlayOneShot(fastTravel);
+        }
+        if (other.gameObject.CompareTag("Fast Travel 4"))
+        {
+            player1.transform.position = fastTravel3.position;
+
+            audioManager.PlayOneShot(fastTravel);
         }
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            transform.position = player1StartPosition.position;
-
-            redKeyScoreNumber = 0;
-
-            audioManager.PlayOneShot(deathSound);
-
-            redKey1.SetActive(true);
-            redKey2.SetActive(true);
-            redKey3.SetActive(true);
-            redKey4.SetActive(true);
-            redKey5.SetActive(true);
-            redKey6.SetActive(true);
+            //0
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKeyScoreNumber += 0;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //1
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey1.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //2
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey1.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //3
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey1.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey1.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey1.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //4
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == true)
+            {
+                redKey1.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey1.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //5
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == true)
+            {
+                redKey1.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == true && redKey6.activeSelf == false)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == true && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey3.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == true && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey4.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == false && redKey2.activeSelf == true && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey5.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (redKey1.activeSelf == true && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey6.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //6
+            if (redKey1.activeSelf == false && redKey2.activeSelf == false && redKey3.activeSelf == false && redKey4.activeSelf == false && redKey5.activeSelf == false && redKey6.activeSelf == false)
+            {
+                redKey2.SetActive(true);
+                redKeyScoreNumber -= 1;
+                transform.position = player1StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
         }
     }
 }

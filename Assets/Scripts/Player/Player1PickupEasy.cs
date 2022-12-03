@@ -125,16 +125,16 @@ public class Player1PickupEasy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter1"))
         {
-            GetComponent<Player1Controller>().enabled = false;
+            //GetComponent<Player1Controller>().enabled = false;
 
-            player2.GetComponent<Player2Controller>().enabled = false;
+            //player2.GetComponent<Player2Controller>().enabled = false;
 
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
 
-            player2.SetActive(false);
+            //player2.SetActive(false);
 
-            enemy1.SetActive(false);
-            enemy2.SetActive(false);
+            //enemy1.SetActive(false);
+            //enemy2.SetActive(false);
 
             SceneManager.LoadScene(4);
         }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player2PickupHard : MonoBehaviour
@@ -14,6 +15,7 @@ public class Player2PickupHard : MonoBehaviour
     public GameObject player2Teleporter;
     public GameObject player2Win;
     public GameObject player1;
+    public GameObject player2;
     public GameObject greenKey1;
     public GameObject greenKey2;
     public GameObject greenKey3;
@@ -39,8 +41,13 @@ public class Player2PickupHard : MonoBehaviour
     public AudioSource audioManager;
     public AudioClip keyPickup;
     public AudioClip deathSound;
+    public AudioClip fastTravel;
 
     public Transform player2StartPosition;
+    public Transform fastTravel1;
+    public Transform fastTravel2;
+    public Transform fastTravel3;
+    public Transform fastTravel4;
 
     private void Start()
     {
@@ -141,34 +148,501 @@ public class Player2PickupHard : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter2"))
         {
-            player2Win.SetActive(true);
+            //GetComponent<Player2Controller>().enabled = false;
 
-            GetComponent<Player2Controller>().enabled = false;
+            //player1.GetComponent<Player1Controller>().enabled = false;
 
-            player1.GetComponent<Player1Controller>().enabled = false;
+            //gameObject.SetActive(false);
 
-            gameObject.SetActive(false);
+            //player1.SetActive(false);
 
-            player1.SetActive(false);
+            //enemy1.SetActive(false);
+            //enemy2.SetActive(false);
 
-            enemy1.SetActive(false);
-            enemy2.SetActive(false);
+            SceneManager.LoadScene(5);
+        }
+
+        if (other.gameObject.CompareTag("Fast Travel 1"))
+        {
+            player2.transform.position = fastTravel2.position;
+
+            audioManager.PlayOneShot(fastTravel);
+        }
+        if (other.gameObject.CompareTag("Fast Travel 2"))
+        {
+            player2.transform.position = fastTravel1.position;
+
+            audioManager.PlayOneShot(fastTravel);
+        }
+        if (other.gameObject.CompareTag("Fast Travel 3"))
+        {
+            player2.transform.position = fastTravel4.position;
+
+            audioManager.PlayOneShot(fastTravel);
+        }
+        if (other.gameObject.CompareTag("Fast Travel 4"))
+        {
+            player2.transform.position = fastTravel3.position;
+
+            audioManager.PlayOneShot(fastTravel);
         }
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            transform.position = player2StartPosition.position;
-
-            greenKeyScoreNumber = 0;
-
-            audioManager.PlayOneShot(deathSound);
-
-            greenKey1.SetActive(true);
-            greenKey2.SetActive(true);
-            greenKey3.SetActive(true);
-            greenKey4.SetActive(true);
-            greenKey5.SetActive(true);
-            greenKey6.SetActive(true);
+            //0
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKeyScoreNumber += 0;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //1
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey1.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey6.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //2
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey1.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //3
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey1.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey1.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey1.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //4
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == true)
+            {
+                greenKey1.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey1.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //5
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == true)
+            {
+                greenKey1.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == true && greenKey6.activeSelf == false)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == true && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey3.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == true && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey4.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == true && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey5.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            if (greenKey1.activeSelf == true && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey6.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
+            //6
+            if (greenKey1.activeSelf == false && greenKey2.activeSelf == false && greenKey3.activeSelf == false && greenKey4.activeSelf == false && greenKey5.activeSelf == false && greenKey6.activeSelf == false)
+            {
+                greenKey2.SetActive(true);
+                greenKeyScoreNumber -= 1;
+                transform.position = player2StartPosition.position;
+                audioManager.PlayOneShot(deathSound);
+            }
         }
     }
 }
