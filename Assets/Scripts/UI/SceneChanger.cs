@@ -11,8 +11,12 @@ public class SceneChanger : MonoBehaviour
 
     public GameObject difficultyPanel;
 
+    public Animator crossFade;
+
     public void MoveToScene(int sceneID)
     {
+        crossFade.SetTrigger("Start");
+        
         SceneManager.LoadScene(sceneID);
 
         audioManager.PlayOneShot(buttonPress);
@@ -25,5 +29,10 @@ public class SceneChanger : MonoBehaviour
         Debug.Log("Quit");
 
         audioManager.PlayOneShot(buttonPress);
+    }
+
+    public void OpenDifficultyPanel()
+    {
+        difficultyPanel.SetActive(true);
     }
 }
