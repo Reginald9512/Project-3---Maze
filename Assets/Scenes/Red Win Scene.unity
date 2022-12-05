@@ -1035,10 +1035,10 @@ RectTransform:
   m_Father: {fileID: 839231645}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 933, y: -244}
-  m_SizeDelta: {x: 239.84058, y: 60}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 260.49997}
+  m_SizeDelta: {x: 239.8406, y: 68.3369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6339072094127297919
 MeshRenderer:
