@@ -89,17 +89,29 @@ public class Player2PickupHard : MonoBehaviour
         if (greenKeyScoreNumber == 1)
         {
             fullGK1.SetActive(true);
+            fullGK2.SetActive(false);
+            fullGK3.SetActive(false);
+            fullGK4.SetActive(false);
+            fullGK5.SetActive(false);
+            fullGK6.SetActive(false);
         }
         if (greenKeyScoreNumber == 2)
         {
             fullGK1.SetActive(true);
             fullGK2.SetActive(true);
+            fullGK3.SetActive(false);
+            fullGK4.SetActive(false);
+            fullGK5.SetActive(false);
+            fullGK6.SetActive(false);
         }
         if (greenKeyScoreNumber == 3)
         {
             fullGK1.SetActive(true);
             fullGK2.SetActive(true);
             fullGK3.SetActive(true);
+            fullGK4.SetActive(false);
+            fullGK5.SetActive(false);
+            fullGK6.SetActive(false);
         }
         if (greenKeyScoreNumber == 4)
         {
@@ -107,6 +119,8 @@ public class Player2PickupHard : MonoBehaviour
             fullGK2.SetActive(true);
             fullGK3.SetActive(true);
             fullGK4.SetActive(true);
+            fullGK5.SetActive(false);
+            fullGK6.SetActive(false);
         }
         if (greenKeyScoreNumber == 5)
         {
@@ -115,6 +129,7 @@ public class Player2PickupHard : MonoBehaviour
             fullGK3.SetActive(true);
             fullGK4.SetActive(true);
             fullGK5.SetActive(true);
+            fullGK6.SetActive(false);
         }
         if (greenKeyScoreNumber == 6)
         {
@@ -148,17 +163,6 @@ public class Player2PickupHard : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter2"))
         {
-            //GetComponent<Player2Controller>().enabled = false;
-
-            //player1.GetComponent<Player1Controller>().enabled = false;
-
-            //gameObject.SetActive(false);
-
-            //player1.SetActive(false);
-
-            //enemy1.SetActive(false);
-            //enemy2.SetActive(false);
-
             SceneManager.LoadScene(5);
         }
 
