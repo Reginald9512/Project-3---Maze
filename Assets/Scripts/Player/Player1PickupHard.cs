@@ -8,10 +8,7 @@ using TMPro;
 public class Player1PickupHard : MonoBehaviour
 {
     public int redKeyScoreNumber;
-
-    public GameObject enemy1;
-    public GameObject enemy2;
-
+    
     public GameObject player1Teleporter;
     public GameObject player1Win;
     public GameObject player1;
@@ -49,6 +46,15 @@ public class Player1PickupHard : MonoBehaviour
     public Transform fastTravel3;
     public Transform fastTravel4;
 
+    public GameObject redKey1Found;
+    public GameObject redKey2Found;
+    public GameObject redKey3Found;
+    public GameObject redKey4Found;
+    public GameObject redKey5Found;
+    public GameObject redKey6Found;
+    public AnimationClip fadeOutAnimation;
+    public float waitDuration = 1.0f;
+
     public void Start()
     {
         redKeyScoreNumber = 0;
@@ -85,6 +91,12 @@ public class Player1PickupHard : MonoBehaviour
             fullRK6.SetActive(false);
             locked.SetActive(true);
             unlocked.SetActive(false);
+            redKey1Found.SetActive(false);
+            redKey2Found.SetActive(false);
+            redKey3Found.SetActive(false);
+            redKey4Found.SetActive(false);
+            redKey5Found.SetActive(false);
+            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 1)
         {
@@ -94,6 +106,12 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(false);
             fullRK5.SetActive(false);
             fullRK6.SetActive(false);
+            redKey1Found.SetActive(true);
+            redKey2Found.SetActive(false);
+            redKey3Found.SetActive(false);
+            redKey4Found.SetActive(false);
+            redKey5Found.SetActive(false);
+            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 2)
         {
@@ -103,6 +121,12 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(false);
             fullRK5.SetActive(false);
             fullRK6.SetActive(false);
+            redKey1Found.SetActive(false);
+            redKey2Found.SetActive(true);
+            redKey3Found.SetActive(false);
+            redKey4Found.SetActive(false);
+            redKey5Found.SetActive(false);
+            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 3)
         {
@@ -112,6 +136,12 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(false);
             fullRK5.SetActive(false);
             fullRK6.SetActive(false);
+            redKey1Found.SetActive(false);
+            redKey2Found.SetActive(false);
+            redKey3Found.SetActive(true);
+            redKey4Found.SetActive(false);
+            redKey5Found.SetActive(false);
+            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 4)
         {
@@ -121,6 +151,12 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(true);
             fullRK5.SetActive(false);
             fullRK6.SetActive(false);
+            redKey1Found.SetActive(false);
+            redKey2Found.SetActive(false);
+            redKey3Found.SetActive(false);
+            redKey4Found.SetActive(true);
+            redKey5Found.SetActive(false);
+            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 5)
         {
@@ -130,6 +166,12 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(true);
             fullRK5.SetActive(true);
             fullRK6.SetActive(false);
+            redKey1Found.SetActive(false);
+            redKey2Found.SetActive(false);
+            redKey3Found.SetActive(false);
+            redKey4Found.SetActive(false);
+            redKey5Found.SetActive(true);
+            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 6)
         {
@@ -141,6 +183,12 @@ public class Player1PickupHard : MonoBehaviour
             fullRK6.SetActive(true);
             unlocked.SetActive(true);
             locked.SetActive(false);
+            redKey1Found.SetActive(false);
+            redKey2Found.SetActive(false);
+            redKey3Found.SetActive(false);
+            redKey4Found.SetActive(false);
+            redKey5Found.SetActive(false);
+            redKey6Found.SetActive(true);
         }
 
     }
@@ -156,7 +204,61 @@ public class Player1PickupHard : MonoBehaviour
                 audioManager.PlayOneShot(keyPickup);
 
                 redKeyScoreNumber += 1;
+
+                StartCoroutine(FadeOut());
             }
+        }
+    }
+
+    IEnumerator FadeOut()
+    {
+        if (redKeyScoreNumber == 1)
+        {
+            redKey1Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            redKey1Found.SetActive(false);
+        }
+        if (redKeyScoreNumber == 2)
+        {
+            redKey2Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            redKey2Found.SetActive(false);
+        }
+        if (redKeyScoreNumber == 3)
+        {
+            redKey3Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            redKey3Found.SetActive(false);
+        }
+        if (redKeyScoreNumber == 4)
+        {
+            redKey4Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            redKey4Found.SetActive(false);
+        }
+        if (redKeyScoreNumber == 5)
+        {
+            redKey5Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            redKey5Found.SetActive(false);
+        }
+        if (redKeyScoreNumber == 6)
+        {
+            redKey6Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            redKey6Found.SetActive(false);
         }
     }
 

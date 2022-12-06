@@ -49,6 +49,15 @@ public class Player2PickupHard : MonoBehaviour
     public Transform fastTravel3;
     public Transform fastTravel4;
 
+    public GameObject greenKey1Found;
+    public GameObject greenKey2Found;
+    public GameObject greenKey3Found;
+    public GameObject greenKey4Found;
+    public GameObject greenKey5Found;
+    public GameObject greenKey6Found;
+    public AnimationClip fadeOutAnimation;
+    public float waitDuration = 1.0f;
+
     private void Start()
     {
         greenKeyScoreNumber = 0;
@@ -85,6 +94,12 @@ public class Player2PickupHard : MonoBehaviour
             fullGK6.SetActive(false);
             locked.SetActive(true);
             unlocked.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(false);
+            greenKey5Found.SetActive(false);
+            greenKey6Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 1)
         {
@@ -94,6 +109,12 @@ public class Player2PickupHard : MonoBehaviour
             fullGK4.SetActive(false);
             fullGK5.SetActive(false);
             fullGK6.SetActive(false);
+            greenKey1Found.SetActive(true);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(false);
+            greenKey5Found.SetActive(false);
+            greenKey6Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 2)
         {
@@ -103,6 +124,12 @@ public class Player2PickupHard : MonoBehaviour
             fullGK4.SetActive(false);
             fullGK5.SetActive(false);
             fullGK6.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(true);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(false);
+            greenKey5Found.SetActive(false);
+            greenKey6Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 3)
         {
@@ -112,6 +139,12 @@ public class Player2PickupHard : MonoBehaviour
             fullGK4.SetActive(false);
             fullGK5.SetActive(false);
             fullGK6.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(true);
+            greenKey4Found.SetActive(false);
+            greenKey5Found.SetActive(false);
+            greenKey6Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 4)
         {
@@ -121,6 +154,12 @@ public class Player2PickupHard : MonoBehaviour
             fullGK4.SetActive(true);
             fullGK5.SetActive(false);
             fullGK6.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(true);
+            greenKey5Found.SetActive(false);
+            greenKey6Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 5)
         {
@@ -130,6 +169,12 @@ public class Player2PickupHard : MonoBehaviour
             fullGK4.SetActive(true);
             fullGK5.SetActive(true);
             fullGK6.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(false);
+            greenKey5Found.SetActive(true);
+            greenKey6Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 6)
         {
@@ -141,6 +186,12 @@ public class Player2PickupHard : MonoBehaviour
             fullGK6.SetActive(true);
             unlocked.SetActive(true);
             locked.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(false);
+            greenKey5Found.SetActive(false);
+            greenKey6Found.SetActive(true);
         }
     }
 
@@ -155,7 +206,61 @@ public class Player2PickupHard : MonoBehaviour
                 audioManager.PlayOneShot(keyPickup);
 
                 greenKeyScoreNumber += 1;
+
+                StartCoroutine(FadeOut());
             }
+        }
+    }
+
+    IEnumerator FadeOut()
+    {
+        if (greenKeyScoreNumber == 1)
+        {
+            greenKey1Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey1Found.SetActive(false);
+        }
+        if (greenKeyScoreNumber == 2)
+        {
+            greenKey2Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey2Found.SetActive(false);
+        }
+        if (greenKeyScoreNumber == 3)
+        {
+            greenKey3Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey3Found.SetActive(false);
+        }
+        if (greenKeyScoreNumber == 4)
+        {
+            greenKey4Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey4Found.SetActive(false);
+        }
+        if (greenKeyScoreNumber == 5)
+        {
+            greenKey5Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey5Found.SetActive(false);
+        }
+        if (greenKeyScoreNumber == 6)
+        {
+            greenKey6Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey6Found.SetActive(false);
         }
     }
 
