@@ -11541,6 +11541,7 @@ GameObject:
   - component: {fileID: 368500110114068259}
   - component: {fileID: 368500110114068264}
   - component: {fileID: 368500110114068265}
+  - component: {fileID: 368500110114068266}
   m_Layer: 3
   m_Name: RedPlayer1
   m_TagString: Player
@@ -11698,6 +11699,20 @@ MonoBehaviour:
   player1StartPosition: {fileID: 218698894}
   fastTravel1: {fileID: 499535307}
   fastTravel2: {fileID: 1862301162}
+--- !u!114 &368500110114068266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368500110114068246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3631434261f27c84995918c429358987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPush: {fileID: 4674543537896427558}
+  pushForce: 50
 --- !u!1 &561016089677448224
 GameObject:
   m_ObjectHideFlags: 0
@@ -17648,6 +17663,7 @@ GameObject:
   - component: {fileID: 4674543537896427539}
   - component: {fileID: 4674543537896427559}
   - component: {fileID: 4674543537896427560}
+  - component: {fileID: 4674543537896427561}
   m_Layer: 3
   m_Name: GreenPlayer2
   m_TagString: Player
@@ -17710,6 +17726,20 @@ MonoBehaviour:
   player2StartPosition: {fileID: 1616583161}
   fastTravel1: {fileID: 499535307}
   fastTravel2: {fileID: 1862301162}
+--- !u!114 &4674543537896427561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674543537896427558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465535fe43f02cb42a2cf825b475135b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPush: {fileID: 368500110114068246}
+  pushForce: 50
 --- !u!1 &4674543538789332482
 GameObject:
   m_ObjectHideFlags: 0
