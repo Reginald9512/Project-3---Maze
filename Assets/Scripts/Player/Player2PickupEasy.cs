@@ -41,6 +41,13 @@ public class Player2PickupEasy : MonoBehaviour
     public Transform fastTravel1;
     public Transform fastTravel2;
 
+    public GameObject greenKey1Found;
+    public GameObject greenKey2Found;
+    public GameObject greenKey3Found;
+    public GameObject greenKey4Found;
+    public AnimationClip fadeOutAnimation;
+    public float waitDuration = 1.0f;
+
     private void Start()
     {
         greenKeyScoreNumber = 0;
@@ -73,6 +80,10 @@ public class Player2PickupEasy : MonoBehaviour
             fullGK4.SetActive(false);
             locked.SetActive(true);
             unlocked.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 1)
         {
@@ -80,6 +91,10 @@ public class Player2PickupEasy : MonoBehaviour
             fullGK2.SetActive(false);
             fullGK3.SetActive(false);
             fullGK4.SetActive(false);
+            greenKey1Found.SetActive(true);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 2)
         {
@@ -87,6 +102,10 @@ public class Player2PickupEasy : MonoBehaviour
             fullGK2.SetActive(true);
             fullGK3.SetActive(false);
             fullGK4.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(true);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 3)
         {
@@ -94,6 +113,10 @@ public class Player2PickupEasy : MonoBehaviour
             fullGK2.SetActive(true);
             fullGK3.SetActive(true);
             fullGK4.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(true);
+            greenKey4Found.SetActive(false);
         }
         if (greenKeyScoreNumber == 4)
         {
@@ -103,6 +126,10 @@ public class Player2PickupEasy : MonoBehaviour
             fullGK4.SetActive(true);
             unlocked.SetActive(true);
             locked.SetActive(false);
+            greenKey1Found.SetActive(false);
+            greenKey2Found.SetActive(false);
+            greenKey3Found.SetActive(false);
+            greenKey4Found.SetActive(true);
         }
     }
 
@@ -117,7 +144,45 @@ public class Player2PickupEasy : MonoBehaviour
                 audioManager.PlayOneShot(keyPickup);
 
                 greenKeyScoreNumber += 1;
+
+                StartCoroutine(FadeOut());
             }
+        }
+    }
+
+    IEnumerator FadeOut()
+    {
+        if (greenKeyScoreNumber == 1)
+        {
+            greenKey1Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey1Found.SetActive(false);
+        }
+        if (greenKeyScoreNumber == 2)
+        {
+            greenKey2Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey2Found.SetActive(false);
+        }
+        if (greenKeyScoreNumber == 3)
+        {
+            greenKey3Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey3Found.SetActive(false);
+        }
+        if (greenKeyScoreNumber == 4)
+        {
+            greenKey4Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+
+            yield return new WaitForSeconds(fadeOutAnimation.length);
+
+            greenKey4Found.SetActive(false);
         }
     }
 
@@ -125,17 +190,6 @@ public class Player2PickupEasy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter2"))
         {
-            //GetComponent<Player2Controller>().enabled = false;
-
-            //player1.GetComponent<Player1Controller>().enabled = false;
-
-            //gameObject.SetActive(false);
-
-            //player1.SetActive(false);
-
-            //enemy1.SetActive(false);
-            //enemy2.SetActive(false);
-
             SceneManager.LoadScene(5);
         }
 
