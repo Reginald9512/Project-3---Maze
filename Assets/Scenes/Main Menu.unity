@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19528377, g: 0.097322635, b: 0.1191001, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 63463392}
   - component: {fileID: 63463391}
   - component: {fileID: 63463390}
-  - component: {fileID: 63463389}
+  - component: {fileID: 63463393}
   - component: {fileID: 63463388}
   - component: {fileID: 63463387}
   m_Layer: 5
@@ -215,22 +215,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &63463389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63463385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1162bb2bfc10144a847e87fc271058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  buttonPress: {fileID: 0}
-  difficultyPanel: {fileID: 0}
-  crossFade: {fileID: 1232002994}
 --- !u!114 &63463390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,10 +259,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 63463389}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: MoveToScene
-        m_Mode: 3
+      - m_Target: {fileID: 63463393}
+        m_TargetAssemblyTypeName: RandomSceneHard, Assembly-CSharp
+        m_MethodName: LoadRandomScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -325,6 +309,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63463385}
   m_CullTransparentMesh: 0
+--- !u!114 &63463393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63463385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbfba19483da90f47a461832f96ef511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crossFade: {fileID: 1232002994}
 --- !u!1 &88396831
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +334,7 @@ GameObject:
   - component: {fileID: 88396838}
   - component: {fileID: 88396837}
   - component: {fileID: 88396836}
-  - component: {fileID: 88396835}
+  - component: {fileID: 88396839}
   - component: {fileID: 88396834}
   - component: {fileID: 88396833}
   m_Layer: 5
@@ -417,22 +414,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &88396835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88396831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1162bb2bfc10144a847e87fc271058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  buttonPress: {fileID: 0}
-  difficultyPanel: {fileID: 0}
-  crossFade: {fileID: 1232002994}
 --- !u!114 &88396836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,10 +458,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 88396835}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: MoveToScene
-        m_Mode: 3
+      - m_Target: {fileID: 88396839}
+        m_TargetAssemblyTypeName: RandomScene, Assembly-CSharp
+        m_MethodName: LoadRandomScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -527,6 +508,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88396831}
   m_CullTransparentMesh: 0
+--- !u!114 &88396839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88396831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0dbaa5a7c45d904d88cfab0d30d7c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crossFade: {fileID: 1232002994}
 --- !u!1 &147218165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1170636436
 RectTransform:
   m_ObjectHideFlags: 0

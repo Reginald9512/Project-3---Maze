@@ -88,10 +88,6 @@ public class Player1PickupEasy : MonoBehaviour
             fullRK2.SetActive(false);
             fullRK3.SetActive(false);
             fullRK4.SetActive(false);
-            redKey1Found.SetActive(true);
-            redKey2Found.SetActive(false);
-            redKey3Found.SetActive(false);
-            redKey4Found.SetActive(false);
         }
         if (redKeyScoreNumber == 2)
         {
@@ -99,10 +95,6 @@ public class Player1PickupEasy : MonoBehaviour
             fullRK2.SetActive(true);
             fullRK3.SetActive(false);
             fullRK4.SetActive(false);
-            redKey1Found.SetActive(false);
-            redKey2Found.SetActive(true);
-            redKey3Found.SetActive(false);
-            redKey4Found.SetActive(false);
         }
         if (redKeyScoreNumber == 3)
         {
@@ -110,10 +102,6 @@ public class Player1PickupEasy : MonoBehaviour
             fullRK2.SetActive(true);
             fullRK3.SetActive(true);
             fullRK4.SetActive(false);
-            redKey1Found.SetActive(false);
-            redKey2Found.SetActive(false);
-            redKey3Found.SetActive(true);
-            redKey4Found.SetActive(false);
         }
         if (redKeyScoreNumber == 4)
         {
@@ -123,10 +111,6 @@ public class Player1PickupEasy : MonoBehaviour
             fullRK4.SetActive(true);
             unlocked.SetActive(true);
             locked.SetActive(false);
-            redKey1Found.SetActive(false);
-            redKey2Found.SetActive(false);
-            redKey3Found.SetActive(false);
-            redKey4Found.SetActive(true);
         }
     }
 
@@ -151,33 +135,33 @@ public class Player1PickupEasy : MonoBehaviour
     {
         if(redKeyScoreNumber == 1)
         {
-            redKey1Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey1Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey1Found.SetActive(false);
         }
         if (redKeyScoreNumber == 2)
         {
-            redKey2Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey2Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey2Found.SetActive(false);
         }
         if (redKeyScoreNumber == 3)
         {
-            redKey3Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey3Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey3Found.SetActive(false);
         }
         if(redKeyScoreNumber == 4)
         {
-            redKey4Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey4Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey4Found.SetActive(false);
         }
@@ -187,7 +171,7 @@ public class Player1PickupEasy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter1"))
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(6);
         }
 
         if (other.gameObject.CompareTag("Fast Travel 1"))

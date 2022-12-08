@@ -106,12 +106,6 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(false);
             fullRK5.SetActive(false);
             fullRK6.SetActive(false);
-            redKey1Found.SetActive(true);
-            redKey2Found.SetActive(false);
-            redKey3Found.SetActive(false);
-            redKey4Found.SetActive(false);
-            redKey5Found.SetActive(false);
-            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 2)
         {
@@ -121,12 +115,6 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(false);
             fullRK5.SetActive(false);
             fullRK6.SetActive(false);
-            redKey1Found.SetActive(false);
-            redKey2Found.SetActive(true);
-            redKey3Found.SetActive(false);
-            redKey4Found.SetActive(false);
-            redKey5Found.SetActive(false);
-            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 3)
         {
@@ -136,12 +124,6 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(false);
             fullRK5.SetActive(false);
             fullRK6.SetActive(false);
-            redKey1Found.SetActive(false);
-            redKey2Found.SetActive(false);
-            redKey3Found.SetActive(true);
-            redKey4Found.SetActive(false);
-            redKey5Found.SetActive(false);
-            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 4)
         {
@@ -151,12 +133,6 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(true);
             fullRK5.SetActive(false);
             fullRK6.SetActive(false);
-            redKey1Found.SetActive(false);
-            redKey2Found.SetActive(false);
-            redKey3Found.SetActive(false);
-            redKey4Found.SetActive(true);
-            redKey5Found.SetActive(false);
-            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 5)
         {
@@ -166,12 +142,6 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(true);
             fullRK5.SetActive(true);
             fullRK6.SetActive(false);
-            redKey1Found.SetActive(false);
-            redKey2Found.SetActive(false);
-            redKey3Found.SetActive(false);
-            redKey4Found.SetActive(false);
-            redKey5Found.SetActive(true);
-            redKey6Found.SetActive(false);
         }
         if (redKeyScoreNumber == 6)
         {
@@ -183,12 +153,6 @@ public class Player1PickupHard : MonoBehaviour
             fullRK6.SetActive(true);
             unlocked.SetActive(true);
             locked.SetActive(false);
-            redKey1Found.SetActive(false);
-            redKey2Found.SetActive(false);
-            redKey3Found.SetActive(false);
-            redKey4Found.SetActive(false);
-            redKey5Found.SetActive(false);
-            redKey6Found.SetActive(true);
         }
 
     }
@@ -214,49 +178,49 @@ public class Player1PickupHard : MonoBehaviour
     {
         if (redKeyScoreNumber == 1)
         {
-            redKey1Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey1Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey1Found.SetActive(false);
         }
         if (redKeyScoreNumber == 2)
         {
-            redKey2Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey2Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey2Found.SetActive(false);
         }
         if (redKeyScoreNumber == 3)
         {
-            redKey3Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey3Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey3Found.SetActive(false);
         }
         if (redKeyScoreNumber == 4)
         {
-            redKey4Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey4Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey4Found.SetActive(false);
         }
         if (redKeyScoreNumber == 5)
         {
-            redKey5Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey5Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey5Found.SetActive(false);
         }
         if (redKeyScoreNumber == 6)
         {
-            redKey6Found.GetComponent<Animation>().Play(fadeOutAnimation.name);
+            redKey6Found.SetActive(true);
 
-            yield return new WaitForSeconds(fadeOutAnimation.length);
+            yield return new WaitForSeconds(2.0f);
 
             redKey6Found.SetActive(false);
         }
@@ -266,7 +230,7 @@ public class Player1PickupHard : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter1"))
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(6);
         }
 
         if (other.gameObject.CompareTag("Fast Travel 1"))
