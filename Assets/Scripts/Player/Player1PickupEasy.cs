@@ -171,7 +171,7 @@ public class Player1PickupEasy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter1"))
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(8);
         }
 
         if (other.gameObject.CompareTag("Fast Travel 1"))

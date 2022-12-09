@@ -8,6 +8,8 @@ using TMPro;
 public class Player1PickupHard : MonoBehaviour
 {
     public int redKeyScoreNumber;
+
+    public GameObject redDoor;
     
     public GameObject player1Teleporter;
     public GameObject player1Win;
@@ -142,6 +144,7 @@ public class Player1PickupHard : MonoBehaviour
             fullRK4.SetActive(true);
             fullRK5.SetActive(true);
             fullRK6.SetActive(false);
+            redDoor.SetActive(true);
         }
         if (redKeyScoreNumber == 6)
         {
@@ -153,6 +156,7 @@ public class Player1PickupHard : MonoBehaviour
             fullRK6.SetActive(true);
             unlocked.SetActive(true);
             locked.SetActive(false);
+            redDoor.SetActive(false);
         }
 
     }
@@ -230,7 +234,7 @@ public class Player1PickupHard : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter1"))
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(8);
         }
 
         if (other.gameObject.CompareTag("Fast Travel 1"))

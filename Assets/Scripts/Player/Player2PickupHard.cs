@@ -9,8 +9,7 @@ public class Player2PickupHard : MonoBehaviour
 {
     public int greenKeyScoreNumber;
 
-    public GameObject enemy1;
-    public GameObject enemy2;
+    public GameObject greenDoor;
 
     public GameObject player2Teleporter;
     public GameObject player2Win;
@@ -145,6 +144,7 @@ public class Player2PickupHard : MonoBehaviour
             fullGK4.SetActive(true);
             fullGK5.SetActive(true);
             fullGK6.SetActive(false);
+            greenDoor.SetActive(true);
         }
         if (greenKeyScoreNumber == 6)
         {
@@ -156,6 +156,7 @@ public class Player2PickupHard : MonoBehaviour
             fullGK6.SetActive(true);
             unlocked.SetActive(true);
             locked.SetActive(false);
+            greenDoor.SetActive(false);
         }
     }
 
@@ -232,7 +233,7 @@ public class Player2PickupHard : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Teleporter2"))
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(9);
         }
 
         if (other.gameObject.CompareTag("Fast Travel 1"))
