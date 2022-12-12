@@ -148,8 +148,8 @@ Material:
     - _ScifiWavesPixelation: 0
     - _ScifiWavesRotation: 0
     - _ScifiWavesRotationSpeed: 0
-    - _ScifiWavesSize: 0.33
-    - _ScifiWavesSpeed: 0.7
+    - _ScifiWavesSize: 0.5
+    - _ScifiWavesSpeed: 0.3
     - _ScifiWavesStyle: 0
     - _ScifiWavesUV: 0
     - _ScifiWavesWidth: 1
