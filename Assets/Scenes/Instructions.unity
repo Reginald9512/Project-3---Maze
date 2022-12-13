@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 212571438}
   - component: {fileID: 212571437}
   m_Layer: 5
-  m_Name: Player2Push
+  m_Name: PushText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,7 +377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 181.29, y: -1081}
+  m_AnchoredPosition: {x: 181.29, y: -1067}
   m_SizeDelta: {x: 227.04, y: 82.962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212571437
@@ -588,7 +588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180.00002}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 234, y: -44.7}
+  m_AnchoredPosition: {x: 263, y: -44.7}
   m_SizeDelta: {x: 63.299988, y: 1.2}
   m_Pivot: {x: 0.5683794, y: 0.4999827}
 --- !u!114 &235983599
@@ -731,7 +731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00011063, y: -673}
+  m_AnchoredPosition: {x: 0.00011063, y: -697}
   m_SizeDelta: {x: 228.54, y: 65.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266893952
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 468381212}
   - component: {fileID: 468381211}
   m_Layer: 5
-  m_Name: Player2Movement
+  m_Name: Player2MovementText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,7 +1228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 158.31287, y: -806}
+  m_AnchoredPosition: {x: 158.31287, y: -819}
   m_SizeDelta: {x: 269.7119, y: 82.962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468381211
@@ -1363,8 +1363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.040008545, y: -2.9974976}
-  m_SizeDelta: {x: -5.829956, y: -12.149902}
+  m_AnchoredPosition: {x: -0.040008545, y: 0.07330322}
+  m_SizeDelta: {x: -5.83, y: -6.0084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &560537047
 MonoBehaviour:
@@ -1508,7 +1508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.96, y: 255}
+  m_AnchoredPosition: {x: -115.96, y: 263.99997}
   m_SizeDelta: {x: 350, y: 224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &671237068
@@ -1698,8 +1698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -5.16395, y: -44.704987}
-  m_SizeDelta: {x: 410.99, y: 65.2}
+  m_AnchoredPosition: {x: -17.65711, y: -44.704956}
+  m_SizeDelta: {x: 434.1918, y: 65.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &714051890
 MonoBehaviour:
@@ -1748,8 +1748,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1833,7 +1833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -246, y: -44.7}
+  m_AnchoredPosition: {x: -298, y: -44.7}
   m_SizeDelta: {x: 62.5, y: 1.2}
   m_Pivot: {x: 0.5683794, y: 0.4999827}
 --- !u!114 &726288721
@@ -1911,7 +1911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.96, y: -260}
+  m_AnchoredPosition: {x: -115.96, y: -273.00003}
   m_SizeDelta: {x: 350, y: 224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &862441115
@@ -2306,7 +2306,7 @@ GameObject:
   - component: {fileID: 1235948972}
   - component: {fileID: 1235948971}
   m_Layer: 5
-  m_Name: Player1Movement
+  m_Name: Player1MovementText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2329,7 +2329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 158.31287, y: -290}
+  m_AnchoredPosition: {x: 158.31287, y: -281.00003}
   m_SizeDelta: {x: 269.7119, y: 82.962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235948971
@@ -2616,7 +2616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.96, y: 51.866}
+  m_AnchoredPosition: {x: -115.96, y: 60.86596}
   m_SizeDelta: {x: 202.6401, y: 103.7324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1421000874
@@ -2715,23 +2715,32 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'IN THIS GAME, YOU CONTROL A SMALL SPHERE AND MUST COLLECT 4 KEYS SCATTERED
-    THROUGHOUT THE MAZE
+  m_text: 'IN THIS GAME, YOU AND A FRIEND ARE TRAPPED INSIDE A MAZE AND MUST COMPETE
+    TO BE THE FIRST TO ESCAPE
 
 
-    YOU WILL NEED TO COLLECT KEYS THAT MATCH THE COLOUR
-    OF YOUR SPHERE
+    YOU BOTH CONTROL A COLOURED SPHERE AND MUST COLLECT
+    THE CORRESPONDING KEYCARDS SCATTERED ACROSS THE MAZE
 
 
-    ONCE YOU HAVE COLLECTED ALL OF YOUR KEYS, A PORTAL WILL
+    PLAYER ONE  =  RED
+
+    PLAYER
+    TWO  =  GREEN
+
+
+    ONCE YOU HAVE COLLECTED ALL OF YOUR KEYCARDS, A PORTAL WILL
     APPEAR FOR YOU TO ESCAPE THE MAZE
 
 
     THE FIRST PLAYER TO ESCAPE WINS
 
 
-    GOOD
-    LUCK'
+    BUT
+    BE SURE TO AVOID THE ENEMIES WHO PATROL THE MAZE
+
+
+    GOOD LUCK'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6408d6b625252462dbf675f3a4945e11, type: 2}
   m_sharedMaterial: {fileID: -886216761342390844, guid: 6408d6b625252462dbf675f3a4945e11, type: 2}
@@ -2847,23 +2856,23 @@ RectTransform:
   - {fileID: 1179181456}
   - {fileID: 454548758}
   - {fileID: 671237069}
-  - {fileID: 639707662}
-  - {fileID: 861449479}
   - {fileID: 1716268079}
-  - {fileID: 266893951}
-  - {fileID: 1421000873}
-  - {fileID: 2108325656}
-  - {fileID: 1781677976}
-  - {fileID: 212571436}
+  - {fileID: 639707662}
   - {fileID: 1235948970}
+  - {fileID: 1421000873}
+  - {fileID: 1781677976}
+  - {fileID: 266893951}
+  - {fileID: 861449479}
   - {fileID: 468381210}
+  - {fileID: 2108325656}
+  - {fileID: 212571436}
   m_Father: {fileID: 247477414}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 451, y: 9.6204}
-  m_SizeDelta: {x: 737.9142, y: 1170.4658}
+  m_AnchoredPosition: {x: 398, y: 1.1591}
+  m_SizeDelta: {x: 737.9142, y: 1196.5005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1477453960
 MonoBehaviour:
@@ -3144,7 +3153,7 @@ GameObject:
   - component: {fileID: 1781677978}
   - component: {fileID: 1781677977}
   m_Layer: 5
-  m_Name: Player1Push
+  m_Name: PushText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3167,7 +3176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 181.29, y: -533}
+  m_AnchoredPosition: {x: 181.29, y: -524}
   m_SizeDelta: {x: 227.04, y: 82.962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781677977
@@ -3302,7 +3311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.96, y: -498}
+  m_AnchoredPosition: {x: -115.96, y: -484.00006}
   m_SizeDelta: {x: 202.6401, y: 103.7324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108325657
@@ -4863,8 +4872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -451, y: -22}
-  m_SizeDelta: {x: 737.9142, y: 913.1837}
+  m_AnchoredPosition: {x: -396, y: 0.0000095367}
+  m_SizeDelta: {x: 737.9142, y: 1207.0055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4296627860956601596
 RectTransform:
@@ -4984,7 +4993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.040008545, y: -2.9974976}
+  m_AnchoredPosition: {x: -0.040008545, y: -2.9974365}
   m_SizeDelta: {x: -5.829956, y: -12.149902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4297373506667657530
